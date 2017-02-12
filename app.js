@@ -40,7 +40,7 @@ function MenuSearchService($http){
 			return $http.get("https://davids-restaurant.herokuapp.com/menu_items.json").then(function(result){
 				angular.forEach(result.data.menu_items, function(value, key){
 					
-					if(value.name === data){
+					if(value.name.includes(data)){
 						foundItemsService.push(value);
 					}
 				});
